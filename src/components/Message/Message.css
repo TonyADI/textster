@@ -6,11 +6,24 @@
     width: fit-content;
 }
 
-.message-body{
+.message-container .message-body{
     background-color: #2693ff;
     border-radius: 15px;
     color: #fff;
     padding: 10px;
     text-align: left;
     width: fit-content;
+}
+
+.message-container .message-responders-name{
+    color: rgb(145, 145, 145);
+    font-size: 0.8em;
+    padding-left: 10px;
+}
+
+.message-container .message-time{
+    font-size: 0.75em;
+    padding-left: 5px;
+    color: #444;
+    text-transform: uppercase;
 }
