@@ -1,21 +1,20 @@
-"use strict";
-var _a;
-exports.__esModule = true;
-exports.removeMessage = exports.addMessage = exports.selectMessageList = exports.messageListSlice = void 0;
-var toolkit_1 = require("@reduxjs/toolkit");
-exports.messageListSlice = toolkit_1.createSlice({
+import { createSlice } from '@reduxjs/toolkit';
+
+export const messageListSlice = createSlice({
     name: 'messageList',
     initialState: [],
     reducers: {
-        addMessage: function (state, action) {
-            state.push(action.payload);
+        addMessage: (state, action) => {
+            return [...state, action.payload];
         },
-        removeMessage: function (state, action) {
-            state.filter(function (message) { return message !== action.payload; });
+        removeMessage: (state, action) => {
+            return state.filter(message => message !== action.payload)
         }
     }
-});
-var selectMessageList = function (state) { return state.messageList; };
-exports.selectMessageList = selectMessageList;
-exports.addMessage = (_a = exports.messageListSlice.actions, _a.addMessage), exports.removeMessage = _a.removeMessage;
-exports["default"] = exports.messageListSlice.reducer;
+})
+
+export const selectMessageList = (state) => state.messageList;
+
+export const {addMessage, removeMessage} = messageListSlice.actions;
+
+export default messageListSlice.reducer;
