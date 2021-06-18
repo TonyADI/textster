@@ -1,8 +1,14 @@
 import Message from '../Message/Message.js';
-const MessageList = (props: {messages:[]}) => {
+import './MessageList.css';
+const MessageList = (props: {messages:string[]}) => {
     return (
-        <div>
-            <Message body={'haha'}/>
+        <div className='messagelist-container'>
+            <Message body={'haha'} time={'1:20pm'}/>
+            <Message body={'ohoh'} responder={'John'} time={'1:22pm'}/>
+            <Message body={'ohoh'} time={'1:24pm'}/>
+            <Message body={'Sheesh this p is longgg'} time={'1:30pm'}/>
+            <Message body={`Very very very very very very veru veru very longgggggggg very very very very
+            long ass message`} time={'1:33pm'}/>
         </div>
     )
 }
