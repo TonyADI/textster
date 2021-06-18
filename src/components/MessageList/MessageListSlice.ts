@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import { message } from './MessageList';
 export const messageListSlice = createSlice({
     name: 'messageList',
     initialState: [],
     reducers: {
-        addMessage: (state:string[], action:{type:string;payload:string}) => {
+        addMessage: (state:message[], action:{type:string;payload:message}) => {
             state.push(action.payload);
         },
-        removeMessage: (state:string[], action:{type:string;payload:string}) => {
+        removeMessage: (state:message[], action:{type:string;payload:message}) => {
             state.filter(message => message !== action.payload)
         }
     }
