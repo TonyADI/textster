@@ -11,7 +11,9 @@ const InputBar = (props:any) => {
         setTerm(e.target.value);
     }
     const sendMessage = () => {
-        dispatch(addMessage(term));
+        const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        const message = {body: term, time: time}
+        dispatch(addMessage(message));
         setTerm('');
     }
     const handleKeyPress = (e:any):void => {
