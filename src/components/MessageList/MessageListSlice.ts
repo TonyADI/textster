@@ -13,7 +13,7 @@ export const messageListSlice = createSlice({
     }
 })
 
-export const selectMessageList = (state: { messageList: string[]; }) => state.messageList;
+export const selectMessageList = (state: { messageList: message[]; }) => state.messageList;
 
 export const {addMessage, removeMessage} = messageListSlice.actions;
 
