@@ -4,6 +4,6 @@ var toolkit_1 = require("@reduxjs/toolkit");
 var MessageListSlice_1 = require("./components/MessageList/MessageListSlice");
 exports["default"] = toolkit_1.configureStore({
     reducer: {
-        messageListReducer: MessageListSlice_1["default"]
+        messageList: MessageListSlice_1["default"]
     }
 });
