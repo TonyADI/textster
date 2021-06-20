@@ -18,7 +18,7 @@ const MessageList = (props: {messages:message[]}) => {
             <Message body={'Sheesh this p is longgg'} time={'1:30 pm'} responder={'Polo G.'}/>
             <Message body={`Very very very very very very veru veru very longgggggggg very very very very
             long ass message`} time={'1:33 pm'}/>
-            {messagelist.map(message => <Message body={message.body} time={message.body}
+            {messagelist.map(message => <Message body={message.body} time={message.time}
             responder={message.responder} />)}
         </div>
     )
