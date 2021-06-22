@@ -1,9 +1,10 @@
-"use strict";
-exports.__esModule = true;
-var toolkit_1 = require("@reduxjs/toolkit");
-var MessageListSlice_1 = require("./components/MessageList/MessageListSlice");
-exports["default"] = toolkit_1.configureStore({
+import { configureStore } from '@reduxjs/toolkit';
+import messageListReducer from './components/MessageList/MessageListSlice';
+import dateReducer from './components/Date';
+
+export default configureStore({
     reducer: {
-        messageList: MessageListSlice_1["default"]
-    }
-});
+      messageList: messageListReducer,
+      date: dateReducer
+    },
+  });
