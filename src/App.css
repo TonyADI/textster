@@ -9,6 +9,10 @@
   box-shadow: 1px 1px 4px #ccc;
   border-radius: 5px;
   padding: 20px;
-  margin: 10px;
-  
+  margin: 10px; 
+}
+
+.date-container{
+  color: rgb(145, 145, 145);
+  font-size: 0.8em;
 }

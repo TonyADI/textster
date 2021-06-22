@@ -13,11 +13,13 @@ const InputBar = (props:any) => {
         setTerm(e.target.value);
     }
     const sendMessage = ():void => {
-        setCurrentDate();
-        const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-        const message = {body: term, time: time}
-        dispatch(addMessage(message));
-        setTerm('');
+        if(term){
+            setCurrentDate();
+            const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const message = {body: term, time: time}
+            dispatch(addMessage(message));
+            setTerm('');
+        }
     }
 
     const setCurrentDate = ():void => {
