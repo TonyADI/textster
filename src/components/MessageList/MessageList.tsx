@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { selectMessageList  } from './MessageListSlice.js';
 import Date from '../Date/Date';
@@ -12,6 +13,11 @@ export interface message {
 
 const MessageList = (props: {messages:(message|string)[]}) => {
     const messagelist:(message|string)[] = useSelector(selectMessageList);
+
+    useEffect(() => {
+        document.querySelectorAll('.message-container:last-child')[0].scrollIntoView();
+    }, [messagelist]);
+    
     return (
         <div className='messagelist-container'>
             <Message body={'haha'} time={'1:20 pm'}/>
