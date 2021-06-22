@@ -1,3 +1,10 @@
 .messagelist-container{
+    height: 65vh;
+    overflow-y: scroll;
     position: relative;
 }
+
+.messagelist-container::-webkit-scrollbar {
+    background: transparent;
+    width: 0px;
+  }
