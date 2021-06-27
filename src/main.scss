@@ -1,56 +1,98 @@
+$grey-border: 1px solid #ccc;
+$rounded-border: 15px;
+
 .App {
     text-align: center;
     width: 45vw;
     margin: auto;
-  }
+}
   
-  .chat-body{
-    border: 1px solid lightgray;
+.chat-body{
+    border: $grey-border;
     box-shadow: 1px 1px 4px #ccc;
     border-radius: 5px;
     padding: 20px;
     margin: 10px;
-  }
+}
   
-  .date-container{
+.date-container{
     color: rgb(145, 145, 145);
     font-size: 0.8em;
-  }
+}
 
-  .inputBar-container{
-    border: 1px solid #ccc;
-    border-radius: 15px;
+.inputBar-container{
+    border: $grey-border;
+    border-radius: $rounded-border;
     position: relative;
     text-align: left;
     width: 100%;
+    .inputBar{
+        border: 0;
+        box-sizing: border-box;
+        margin-left: 5px;
+        outline: none;
+        padding: 10px;
+        width: 85%;
+    }
+    .send-button{
+        background-color: rgb(0, 173, 231);
+        border: 0;
+        border-radius: 0px 15px 15px 0px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        height: 102%; /* Fix this */
+        padding: 0px 15px;
+        position: absolute;
+        right: -1px;
+        top: -0.25px; /* Fix this */
+        transition: filter 0.3s;
+        width: 15%;
+    }
+    
+    .send-button:hover{
+        filter: brightness(90%);
+    }
 }
 
-.inputBar{
-    border: 0;
-    border-radius: 15px;
-    box-sizing: border-box;
-    margin-left: 5px;
-    outline: none;
-    padding: 10px;
-    width: 85%;
+.messagelist-container{
+    height: 65vh;
+    overflow-y: scroll;
+    position: relative;
 }
 
-.send-button{
-    background-color: rgb(0, 173, 231);
-    border: 0;
-    border-radius: 0px 15px 15px 0px;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    height: 102%; /* Fix this */
-    padding: 0px 15px;
-    position: absolute;
-    right: -1px;
-    top: -0.25px; /* Fix this */
-    transition: filter 0.3s;
-    width: 15%;
+.messagelist-container::-webkit-scrollbar {
+    background: transparent;
+    width: 0px;
 }
 
-.send-button:hover{
-    filter: brightness(90%);
+.message-container{
+    margin: 10px 0 10px auto;
+    max-width: 70%;
+    position: relative;
+    text-align: right;
+    width: fit-content;
+    .message-body {
+        background-color: #2693ff;
+        border-radius: $rounded-border;
+        color: #fff;
+        margin-left: auto;
+        padding: 10px;
+        text-align: left;
+        width: fit-content;
+    }
+    
+    .message-responders-name{
+        color: rgb(145, 145, 145);
+        font-size: 0.8em;
+        padding-left: 10px;
+    }
+    
+    .message-time{
+        font-size: 0.75em;
+        padding-left: 5px;
+        color: #666;
+        text-transform: uppercase;
+    }
 }
+
